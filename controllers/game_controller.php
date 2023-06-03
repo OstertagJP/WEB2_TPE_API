@@ -3,8 +3,7 @@
 require_once 'models/game_model.php';
 require_once 'views/game_view.php';
 
-class game_controller
-{
+class game_controller {
 
     private $model;
     private $view;
@@ -16,4 +15,11 @@ class game_controller
         $this->model = new game_model();
         $this->view = new game_view();
     }
+
+    public function show_games() {
+        $games = $this->model->get_games();
+        $this->view->showgame($games);
+    }
 }
+
+

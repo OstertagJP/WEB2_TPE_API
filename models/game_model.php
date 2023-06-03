@@ -17,14 +17,14 @@ class game_model{
         return $games;
     }
 
-    function insert_game($name_genre, $description_genre){                //Funcion que inserta un juego nuevo (se le pasan dos parametros, name y description)
+    function insert_game($name_game, $description_game){                //Funcion que inserta un juego nuevo (se le pasan dos parametros, name y description)
         // 2. EJECUTAR CONSULTA SQL (2 SUBPASOS: PREPARE Y EXECUTE)
         $query = $this->db->prepare('INSERT INTO game (name_game, description_game) VALUES (?,?)');
         $query -> execute(array($name_game, $description_game));
         
     }
     
-    function delete_genre($id_game){                                      //Funcion que elimina un juego (se le pasa un parametro, id)
+    function delete_game($id_game){                                      //Funcion que elimina un juego (se le pasa un parametro, id)
         // 2. EJECUTAR CONSULTA SQL (2 SUBPASOS: PREPARE Y EXECUTE)
         $query = $this->db->prepare('DELETE FROM game WHERE id = ?');
         $query -> execute(array($id_game));

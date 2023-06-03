@@ -13,7 +13,7 @@ class register_model{
         // 2. EJECUTAR CONSULTA SQL (2 SUBPASOS: PREPARE Y EXECUTE)        //Funcion que obtiene todos los usuarios
         $query = $this->db->prepare('SELECT * FROM user');
         $query->execute();
-        $games=$query->fetchAll(PDO::FETCH_OBJ);
+        $users=$query->fetchAll(PDO::FETCH_OBJ);
         return $users;
     }
 
