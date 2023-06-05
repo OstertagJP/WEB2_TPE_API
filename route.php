@@ -2,28 +2,20 @@
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
-require_once "models/game_model.php";
-require_once "views/game_view.php";
-require_once "models/genre_model.php";
-require_once "views/genre_view.php";
 require_once "controllers/game_controller.php";
 require_once "controllers/genre_controller.php";
-require_once "views/home_view.php";
-
-// aca irian los require once de los archivos php
-//
-
-
-$genres = new genre_controller();
-$genres->controller_genres();
 require_once "controllers/home_controller.php";
 
+require_once "models/genre_model.php";
+require_once "models/game_model.php";
+
+require_once "views/game_view.php";
+require_once "views/genre_view.php";
 require_once "views/home_view.php";
 
-// aca irian los require once de los archivos php
 
-
-$game = new game_controller();
+$games = new game_controller();
+$genres = new genre_controller();
 $home= new home_view();
 
 
@@ -45,7 +37,7 @@ switch ($parametros[0]) {
         $genres->controller_genres();      //llama al controlador para mostrar todos los generos
         break;
     case 'juegos':
-        $game->controller_games();      //muestra todos los juegos
+        $games->controller_games();      //muestra todos los juegos
         break;
     case 'registro':
         $registro->mostrar_registro();      //mostrar la pagina para registrarse
