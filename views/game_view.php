@@ -13,7 +13,7 @@ class game_view {
         // asigno variables al tpl smarty
         $this->smarty->assign('games', $games);
         $this->smarty->assign('BASE_URL', BASE_URL);
-        // mostrar el tpl
+        // muestro el tpl
         $this->smarty->display('templates/game_list.tpl');
     }
     

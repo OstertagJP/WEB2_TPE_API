@@ -13,8 +13,8 @@ class genre_model{
         // 2. EJECUTAR CONSULTA SQL (2 SUBPASOS: PREPARE Y EXECUTE)
         $query = $this->db->prepare('SELECT * FROM genre');
         $query->execute();
-        $genre=$query->fetchAll(PDO::FETCH_OBJ);
-        return $genre;
+        $genres=$query->fetchAll(PDO::FETCH_OBJ);
+        return $genres;
     }
 
     function insert_genre($name_genre, $description_genre){                //Funcion que inserta un genero nuevo (se le pasan dos parametros, name y description)
