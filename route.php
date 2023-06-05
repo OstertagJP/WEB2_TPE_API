@@ -16,6 +16,17 @@ require_once "views/home_view.php";
 
 $genres = new genre_controller();
 $genres->controller_genres();
+require_once "controllers/home_controller.php";
+
+require_once "views/home_view.php";
+
+// aca irian los require once de los archivos php
+
+
+$game = new game_controller();
+$home= new home_view();
+
+
 
 // lee la acción del envio del formulario
 if (!empty($_GET['action'])) {
@@ -34,7 +45,7 @@ switch ($parametros[0]) {
         $genres->controller_genres();      //llama al controlador para mostrar todos los generos
         break;
     case 'juegos':
-        $juegos->show_games();      //muestra todos los juegos
+        $game->controller_games();      //muestra todos los juegos
         break;
     case 'registro':
         $registro->mostrar_registro();      //mostrar la pagina para registrarse

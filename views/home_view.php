@@ -1,9 +1,18 @@
 <?php
 
-class home_view{
-    
-    function mostrar_home()
-    {
-        echo "entre a home";
+require_once 'libs/Smarty.class.php';
+
+class home_view {
+
+    private $smarty;
+
+    public function __construct() {
+        $this->smarty = new Smarty(); // inicializo Smarty
     }
+    
+    public function mostrar_home()
+    {
+        $this->smarty->display('templates/home.tpl');
+    }
+    
 }
