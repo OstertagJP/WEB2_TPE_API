@@ -1,7 +1,7 @@
 <?php
 
-class genre_view
-{
+class genre_view{
+    
     
 }
 

@@ -24,14 +24,13 @@ $parametros=explode('/',$action);
 
 switch ($parametros[0]) {
     case 'home':
-        
         $home->mostrar_home();             //muestra el HOME    
         break;
     case 'generos':
-        $generos->mostrar_generos();      //muestra todos los generos
+        $genres->controller_genres();      //llama al controlador para mostrar todos los generos
         break;
     case 'juegos':
-        $juegos->mostrar_juegos();      //muestra todos los juegos
+        $juegos->show_games();      //muestra todos los juegos
         break;
     case 'registro':
         $registro->mostrar_registro();      //mostrar la pagina para registrarse
