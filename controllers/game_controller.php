@@ -16,9 +16,23 @@ class game_controller {
         $this->view = new game_view();
     }
 
-    public function controller_games() {
+    public function controller_games() {         //Funcion que muestra todos los juegos 
         $games = $this->model->get_games();
         $this->view->show_games($games);
+    }
+
+    public function add_game(){           //Funcion para agregar un juego nuevo. Lee los valores que ingreso el usuario en el formulario
+        //Validar datos
+        $name_game=$_REQUEST['name_game'];
+        $description_game=$_REQUEST['description_game'];
+        $genre_game=$_REQUEST['genre_game'];
+    
+        $this->model->insert_game($name_game, $description_game, $genre_game);
+        header("Location:" . BASE_URL);
+    } 
+
+    public function delete_game(){    //Funcion para eliminar un juego. Hay que ver como tomamos el valor del ID para saber cual borrar
+
     }
 }
 
