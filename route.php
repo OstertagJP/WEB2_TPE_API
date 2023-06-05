@@ -24,7 +24,7 @@ $home= new home_view();
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 } else {
-    $action = 'home'; // acción por defecto
+    $action = 'generos'; // acción por defecto
 }
 
 $parametros=explode('/',$action);

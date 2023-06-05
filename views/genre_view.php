@@ -10,7 +10,7 @@ class genre_view{
         $this->smarty = new Smarty(); // inicializo Smarty
     }
 
-    public function show_genres(){
+    public function show_genres($genres){
         // asigno variables al tpl smarty
         $this->smarty->assign('genres', $genres);
         $this->smarty->assign('BASE_URL', BASE_URL);
