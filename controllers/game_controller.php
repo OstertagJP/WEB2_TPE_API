@@ -18,7 +18,7 @@ class game_controller {
 
     public function show_games() {
         $games = $this->model->get_games();
-        $this->view->showgame($games);
+        $this->view->show_games($games);
     }
 }
 

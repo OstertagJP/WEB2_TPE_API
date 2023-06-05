@@ -1,5 +1,5 @@
 <?php
-require_once './libs/smarty-4.2.1/libs/Smarty.class.php';
+require_once 'libs/Smarty.class.php';
 
 class game_view {
 
@@ -9,13 +9,12 @@ class game_view {
         $this->smarty = new Smarty(); // inicializo Smarty
     }
 
-    function showgame($games) {
+    function show_games($games) {
         // asigno variables al tpl smarty
-        $this->smarty->assign('count', count($games)); 
         $this->smarty->assign('games', $games);
-
+        $this->smarty->assign('BASE_URL', BASE_URL);
         // mostrar el tpl
-        $this->smarty->display('game_list.tpl');
+        $this->smarty->display('templates/game_list.tpl');
     }
     
 }

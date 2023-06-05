@@ -1,8 +1,8 @@
 <body>
     <header>
-        <div>
-            <img src="{$BASE_URL}img/estadio.jpg" alt="estadio">
-        </div>
+        {* <div>
+            <img src="mg/estadio.jpg" alt="estadio">
+        </div> *}
         <div>
             <h1>E-Sports</h1>
             <p>Jugando con profesionalidad...</p>
