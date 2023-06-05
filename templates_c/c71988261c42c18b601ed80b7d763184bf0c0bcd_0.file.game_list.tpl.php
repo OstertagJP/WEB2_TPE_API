@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-06-04 18:06:45
+/* Smarty version 4.3.1, created on 2023-06-05 21:14:16
   from 'C:\xampp\htdocs\tpe\templates\game_list.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_647cb695536587_27338920',
+  'unifunc' => 'content_647e34087596d1_19121592',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c71988261c42c18b601ed80b7d763184bf0c0bcd' => 
     array (
       0 => 'C:\\xampp\\htdocs\\tpe\\templates\\game_list.tpl',
-      1 => 1685894801,
+      1 => 1685991079,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_647cb695536587_27338920 (Smarty_Internal_Template $_smarty_tpl) {
+function content_647e34087596d1_19121592 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -47,7 +47,6 @@ $_smarty_tpl->tpl_vars['game']->do_else = false;
 </li>
         <li>Genero: <?php echo $_smarty_tpl->tpl_vars['game']->value->name_genre;?>
 </li>
-        
 <a href="detalle/<?php echo $_smarty_tpl->tpl_vars['game']->value->id_game;?>
 ">detalle</a>
     <?php

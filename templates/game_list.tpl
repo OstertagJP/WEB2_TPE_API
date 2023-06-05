@@ -13,7 +13,6 @@
         <li>Nombre: {$game -> name_game}  </li>
         <li>Descripcion: {$game -> description_game}</li>
         <li>Genero: {$game -> name_genre}</li>
-        
 <a href="detalle/{$game -> id_game}">detalle</a>
     {/foreach}
 </ul>
