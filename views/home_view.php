@@ -9,8 +9,8 @@ class home_view {
     public function __construct() {
         $this->smarty = new Smarty(); // inicializo Smarty
     }
-
-    function mostrar_home()
+    
+    public function mostrar_home()
     {
         $this->smarty->display('templates/home.tpl');
     }
