@@ -12,6 +12,7 @@ class home_view {
     
     public function mostrar_home()
     {
+        $this->smarty->assign('BASE_URL', BASE_URL);
         $this->smarty->display('templates/home.tpl');
     }
     

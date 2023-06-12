@@ -1,8 +1,14 @@
+  <nav>
+    <ul class="navbar">
+        <li class="barramenu"><a href="{$BASE_URL}home">Home</a></li>
+        <li class="barramenu"><a href="{$BASE_URL}juegos">Juegos</a></li>
+        <li class="barramenu"><a href="{$BASE_URL}generos">Generos</a></li>
 
-<nav>
-    <ul>
-        <li>HOME</li>
-        <li>GAMES</li>
-        <li>GENRES</li>
+        {* {if (isset($logueado)) && !($logueado)}
+            <li class="barramenu"><a href="{$BASE_URL}registrar">Registrarse</a></li>     
+        {elseif {$smarty.session.permiso}==1}
+            <li class="barramenu"><a href="{$BASE_URL}usuarios">Modificar Usuarios</a></li>
+        {/if} *}
+        
     </ul>
 </nav>

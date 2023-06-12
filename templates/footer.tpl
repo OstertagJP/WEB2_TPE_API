@@ -1,8 +1,6 @@
-
-<footer>
-    <div>
-        <p>----...FOOTER DE LA PAGINA...----</p>
-        <p>----.........E-SPORTS.........----</p>
-    </div>
+<footer class="footer">
+  <div class="container_footer">
+    <p>&copy; 2023 Mi Empresa. Todos los derechos reservados.</p>
+  </div>
 </footer>
 </html>
