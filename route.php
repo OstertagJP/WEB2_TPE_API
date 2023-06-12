@@ -17,6 +17,7 @@ require_once "views/home_view.php";
 $games = new game_controller();
 $genres = new genre_controller();
 $home= new home_view();
+$game = new game_controller();
 
 
 
@@ -33,16 +34,25 @@ switch ($parametros[0]) {
     case 'home':
         $home->mostrar_home();             //muestra el HOME    
         break;
+
     case 'generos':
         $genres->controller_genres();      //llama al controlador para mostrar todos los generos
         break;
+
     case 'juegos':
         $games->controller_games();      //muestra todos los juegos
         break;
+
+    case 'juego':
+        $id=$parametros[1];
+        $game->controller_game($id);      //muestra un juego
+        break;
+
     case 'registro':
         $registro->mostrar_registro();      //mostrar la pagina para registrarse
         break;
-        case 'detalle':
-                //mostrar la pagina para registrarse
-            break;
+
+    case 'detalle':
+            //mostrar la pagina para registrarse
+        break;
     }

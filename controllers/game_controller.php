@@ -21,6 +21,11 @@ class game_controller {
         $this->view->show_games($games);
     }
 
+    public function controller_game($id) {         //Funcion que muestra detalle de un juego
+        $game = $this->model->get_game($id);
+        $this->view->show_game($game);
+    }
+
     public function add_game(){           //Funcion para agregar un juego nuevo. Lee los valores que ingreso el usuario en el formulario
         //Validar datos
         $name_game=$_REQUEST['name_game'];

@@ -11,10 +11,18 @@ class game_model{
 
     public function get_games(){
         // 2. EJECUTAR CONSULTA SQL (2 SUBPASOS: PREPARE Y EXECUTE)        //Funcion que obtiene todos los juegos
-        $query = $this->db->prepare('SELECT * FROM game join genre on game.genre_id=genre.id_genre');
+        $query = $this->db->prepare('SELECT name_game FROM game join genre on game.genre_id=genre.id_genre');
         $query->execute();
         $games=$query->fetchAll(PDO::FETCH_OBJ);
         return $games;
+    }
+
+    public function get_game($id){
+        // 2. EJECUTAR CONSULTA SQL (2 SUBPASOS: PREPARE Y EXECUTE)        //Funcion que obtiene todos los juegos
+        $query = $this->db->prepare('SELECT description_game FROM game WHERE id_game=?');
+        $query->execute(array($id));
+        $game=$query->fetch(PDO::FETCH_OBJ);
+        return $game;
     }
 
     public function insert_game($name_game, $description_game, $genre_game){                //Funcion que inserta un juego nuevo (se le pasan tres parametros, name, description y genre)
