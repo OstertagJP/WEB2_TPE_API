@@ -18,9 +18,12 @@ class genre_controller{
         $this->view->show_genres($genres);
     } 
 
-    public function controller_update_genre(){           //CONTROLADOR - MODIFICA/EDITA GÉNERO YA CARGADO
+    public function controller_update_genre($id){           //CONTROLADOR - MODIFICA/EDITA GÉNERO YA CARGADO
         
-        if (isset($_POST[name_genre], $_POST[description_genre], $_POST[id_genre])){
+        if (isset($_POST['name_genre'], $_POST['description_genre'], $_POST['id_genre'])){
+            $name_genre = $_POST['name_genre'];
+            $description_genre = $_POST['description_genre'];
+            // $id_genre = $_POST['id_genre'];
             $genre=$this->model->update_genre($name_genre, $description_genre, $id_genre);
         }
     }
