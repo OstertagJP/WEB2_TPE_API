@@ -21,6 +21,7 @@ $game = new game_controller();
 
 
 
+
 // lee la acción del envio del formulario
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
