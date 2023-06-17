@@ -50,13 +50,19 @@ switch ($parametros[0]) {
         $id=$parametros[1];
         $game->controller_game($id);      //muestra un juego
         break;
+
     case 'bygenero':
         $id=$parametros[1];
-        $bygenero->controller_game_bygenre($id);      //muestra un juego
+        $bygenero->controller_game_bygenre($id);      //muestra un juego segun genero especifico
         break;
 
     case 'registro':
         $registro->mostrar_registro();      //mostrar la pagina para registrarse
+        break;
+    
+    case 'modificar':
+        $id=$parametros[1];
+        $genre->controller_update_genre($id);      //modifica un genero ya cargado
         break;
 
     case 'detalle':
