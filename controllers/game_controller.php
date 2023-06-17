@@ -32,13 +32,13 @@ class game_controller {
     }
 
     public function add_game(){           //Funcion para agregar un juego nuevo. Lee los valores que ingreso el usuario en el formulario
-        //Validar datos
-        $name_game=$_REQUEST['name_game'];
-        $description_game=$_REQUEST['description_game'];
-        $genre_game=$_REQUEST['genre_game'];
-    
-        $this->model->insert_game($name_game, $description_game, $genre_game);
-        header("Location:" . BASE_URL);
+        if (isset($_POST['name_game'], $_POST['description_game'], $_POST['genre_game'])){
+            $name_game=$_REQUEST['name_game'];
+            $description_game=$_REQUEST['description_game'];
+            $genre_game=$_REQUEST['genre_game'];
+        
+            $this->model->insert_game($name_game, $description_game, $genre_game);
+            header("Location: juegos");                              //UNA VEZ QUE AGREGO EL JUEGO NUEVO, REDIRECCIONO A LA PAGINA DE JUEGOS
     } 
 
     public function delete_game(){    //Funcion para eliminar un juego. Hay que ver como tomamos el valor del ID para saber cual borrar
