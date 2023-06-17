@@ -22,7 +22,7 @@ class game_controller {
     }
 
     public function controller_game($id) {         //Funcion que muestra detalle de un juego
-        $game = $this->model->get_game($id);
+        $game=$this->model->get_game($id);
         $this->view->show_game($game);
     }
 

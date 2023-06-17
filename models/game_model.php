@@ -11,15 +11,15 @@ class game_model{
 
     public function get_games(){
         // 2. EJECUTAR CONSULTA SQL (2 SUBPASOS: PREPARE Y EXECUTE)        //Funcion que obtiene todos los juegos
-        $query = $this->db->prepare('SELECT name_game FROM game join genre on game.genre_id=genre.id_genre');
+        $query = $this->db->prepare('SELECT game.id_game, game.name_game, game.description_game, game.genre_id FROM game join genre on game.genre_id=genre.id_genre');
         $query->execute();
         $games=$query->fetchAll(PDO::FETCH_OBJ);
         return $games;
     }
 
     public function get_game($id){
-        // 2. EJECUTAR CONSULTA SQL (2 SUBPASOS: PREPARE Y EXECUTE)        //Funcion que obtiene todos los juegos
-        $query = $this->db->prepare('SELECT description_game FROM game WHERE id_game=?');
+        // 2. EJECUTAR CONSULTA SQL (2 SUBPASOS: PREPARE Y EXECUTE)        //Funcion que obtiene un juego en particular segun el id
+        $query = $this->db->prepare('SELECT * FROM game WHERE id_game=?');
         $query->execute(array($id));
         $game=$query->fetch(PDO::FETCH_OBJ);
         return $game;
