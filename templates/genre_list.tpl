@@ -1,13 +1,20 @@
 {include file="templates/head.tpl"}
 {include file="templates/header.tpl"}
 
-
-<ul class="list-group">
-    {foreach from=$genres item=$genre}
-        <li>Genero: {$genre -> name_genre}  </li>
-        <li>Descripcion: {$genre -> description_genre}</li><br>
-        <a href="bygenero/{$genre -> id_genre}">Juegos de este genero</a><br><br>                     
-    {/foreach}
-</ul>
+<table>
+    <tr class="table_genre">
+            <th>Genero:</th>
+            <th>Descripcion:</th>
+        {foreach from=$genres item=$genre}
+            <tr>
+                <td>{$genre -> name_genre} </td>
+                <td>{$genre -> description_genre}</td>
+                <td><a href="bygenero/{$genre -> id_genre}">EDITAR</a></td>
+                <td><a href="bygenero/{$genre -> id_genre}">BORRAR</a></td>
+                <td><a href="bygenero/{$genre -> id_genre}">Juegos de este genero</a></td>
+            </tr>
+        {/foreach}
+    </tr>
+</table>
 
 {include file="templates/footer.tpl"}

@@ -31,12 +31,12 @@ class genre_model{
 
     }
 
-    public function update_genre($name_genre, $description_genre, $id_genre){          //Funcion que modifica un genero ya cargado segun un ID. Se le pasan nombre y descripcion
-         // 2. EJECUTAR CONSULTA SQL (2 SUBPASOS: PREPARE Y EXECUTE)
-         $query = $this->db->prepare('UPDATE genre SET (name_genre = ?, description_genre = ? WHERE id = ?');
-         $query -> execute(array(($name_genre, $description_genre, $id_genre)));
+    // public function update_genre($name_genre, $description_genre, $id_genre){          //Funcion que modifica un genero ya cargado segun un ID. Se le pasan nombre y descripcion
+    //      // 2. EJECUTAR CONSULTA SQL (2 SUBPASOS: PREPARE Y EXECUTE)
+    //      $query = $this->db->prepare('UPDATE genre SET (name_genre = ?, description_genre = ? WHERE id = ?');
+    //      $query -> execute(array(($name_genre, $description_genre, $id_genre)));
 
-    }                              
+    // }                              
 
 }
 

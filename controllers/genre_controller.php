@@ -24,7 +24,7 @@ class genre_controller{
             $name_genre = $_POST['name_genre'];
             $description_genre = $_POST['description_genre'];
             // $id_genre = $_POST['id_genre'];
-            $genre=$this->model->update_genre($name_genre, $description_genre, $id_genre);
+            $genre=$this->model->update_genre($name_genre, $description_genre, $id);
         }
     }
 
