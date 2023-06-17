@@ -6,8 +6,7 @@
     {foreach from=$genres item=$genre}
         <li>Genero: {$genre -> name_genre}  </li>
         <li>Descripcion: {$genre -> description_genre}</li><br>
-        
-        <a href="detalle/{$genre -> id_genre}">Detalle</a>                      
+        <a href="bygenero/{$genre -> id_genre}">Juegos de este genero</a><br><br>                     
     {/foreach}
 </ul>
 
