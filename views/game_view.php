@@ -25,5 +25,13 @@ class game_view {
         $this->smarty->display('templates/game_details.tpl');
     }
     
+    public function show_game_id($game_id) {
+        // asigno variables al tpl smarty
+        $this->smarty->assign('game', $game_id);
+        $this->smarty->assign('BASE_URL', BASE_URL);
+        // muestro el tpl
+        $this->smarty->display('templates/game_details_id.tpl');
+    }
+    
 }
 

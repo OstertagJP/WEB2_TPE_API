@@ -25,6 +25,11 @@ class game_controller {
         $game=$this->model->get_game($id);
         $this->view->show_game($game);
     }
+    
+    public function controller_game_bygenre($id) {         //Funcion que muestra detalle de un juego segun el genero solicitado
+        $game_id=$this->model->get_game_id($id);
+        $this->view->show_game_id($game_id);
+    }
 
     public function add_game(){           //Funcion para agregar un juego nuevo. Lee los valores que ingreso el usuario en el formulario
         //Validar datos

@@ -18,6 +18,8 @@ $games = new game_controller();
 $genres = new genre_controller();
 $home= new home_view();
 $game = new game_controller();
+$bygenero = new game_controller();
+
 
 
 
@@ -47,6 +49,10 @@ switch ($parametros[0]) {
     case 'juego':
         $id=$parametros[1];
         $game->controller_game($id);      //muestra un juego
+        break;
+    case 'bygenero':
+        $id=$parametros[1];
+        $bygenero->controller_game_bygenre($id);      //muestra un juego
         break;
 
     case 'registro':

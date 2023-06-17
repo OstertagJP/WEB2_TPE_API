@@ -39,10 +39,10 @@ class game_model{
 
     }
 
-    public function get_games_by_genre($genre){
+    public function get_game_id($id_genre){
         // 2. EJECUTAR CONSULTA SQL (2 SUBPASOS: PREPARE Y EXECUTE)        //Funcion que obtiene todos los juegos de un genero en particular (que se le pasa como parametro)
-        $query = $this->db->prepare('SELECT * FROM game WHERE genre_id = ?');
-        $query->execute(array($genre));
+        $query = $this->db->prepare('SELECT game.name_game, game.description_game, genre.name_genre FROM game JOIN genre ON game.genre_id = genre.id_genre WHERE game.genre_id = ?');
+        $query->execute([$id_genre]);
         $games=$query->fetchAll(PDO::FETCH_OBJ);
         return $games;
     }
