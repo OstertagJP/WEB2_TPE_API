@@ -2,8 +2,8 @@
 {include file="templates/header.tpl"}
 <h1>Detalles del juego:</h1><br>
 
-{$game->name_game}<br><br> 
-{$game->description_game}<br><br>
+<span class="game-name">{$game->name_game}</span><br><br> 
+<span class="game-description">{$game->description_game}</span><br><br>
 
 
 {include file="templates/footer.tpl"}

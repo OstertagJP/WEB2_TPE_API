@@ -16,7 +16,7 @@ require_once "views/home_view.php";
 
 $games = new game_controller();
 $genres = new genre_controller();
-$home= new home_view();
+$home = new home_view();
 $game = new game_controller();
 $bygenero = new game_controller();
 
@@ -31,7 +31,7 @@ if (!empty($_GET['action'])) {
     $action = 'home'; // acción por defecto
 }
 
-$parametros=explode('/',$action);
+$parametros = explode('/', $action);
 
 switch ($parametros[0]) {
     case 'home':
@@ -47,25 +47,30 @@ switch ($parametros[0]) {
         break;
 
     case 'juego':
-        $id=$parametros[1];
+        $id = $parametros[1];
         $game->controller_game($id);      //muestra un juego
         break;
 
     case 'bygenero':
-        $id=$parametros[1];
+        $id = $parametros[1];
         $bygenero->controller_game_bygenre($id);      //muestra un juego segun genero especifico
         break;
 
     case 'registro':
         $registro->mostrar_registro();      //mostrar la pagina para registrarse
         break;
-    
+
+    case 'modificar_game':
+        $id = $parametros[1];
+        $game->modificar_game($id);      //modifica un juego ya cargado
+        break;
+
     case 'modificar':
-        $id=$parametros[1];
+        $id = $parametros[1];
         $genre->controller_update_genre($id);      //modifica un genero ya cargado
         break;
 
     case 'detalle':
-            //mostrar la pagina para registrarse
+        //mostrar la pagina para registrarse
         break;
-    }
+}

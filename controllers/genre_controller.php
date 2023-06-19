@@ -23,11 +23,12 @@ class genre_controller{
         if (isset($_POST['name_genre'], $_POST['description_genre'])){
             $name_genre = $_POST['name_genre'];
             $description_genre = $_POST['description_genre'];
-            // $id_genre = $_POST['id_genre'];
+             $id_genre = $_POST['id_genre'];
             $this->model->update_genre($name_genre, $description_genre, $id);
             header('Location: generos');                                        //UNA VEZ MODIFICADO EL REGISTRO, REDIRECCIONO A LA PAGINA DE GENEROS
         }
     }
+   
 
     public function add_genre(){           //Funcion para agregar un genero nuevo. Lee los valores que ingreso el usuario en el formulario
         if (isset($_POST['name_genre'], $_POST['description_genre'])){
