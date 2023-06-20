@@ -9,9 +9,10 @@ class game_view {
         $this->smarty = new Smarty(); // inicializo Smarty
     }
 
-    public function show_games($games) {
+    public function show_games($games, $list_genre) {
         // asigno variables al tpl smarty
         $this->smarty->assign('games', $games);
+        $this->smarty->assign('genres', $list_genre);
         $this->smarty->assign('BASE_URL', BASE_URL);
         // muestro el tpl
         $this->smarty->display('templates/game_list.tpl');

@@ -87,6 +87,9 @@ switch ($parametros[0]) {
         $id = $parametros[1];
         $genre->controller_update_genre($id);      //modifica un genero ya cargado
         break;
+    
+    case 'add_game':
+        $games->add_game();
 
     case 'actualizar_game':
         $id = $parametros[1];

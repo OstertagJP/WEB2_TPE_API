@@ -18,7 +18,7 @@
     {/foreach}
 </table>
 
-<a class="game-link" href="{BASE_URL}add_game/{$game->id_game}">Cargar Juego</a>
+{include file="templates/add_game.tpl"}
 
 
 {include file="templates/footer.tpl"}

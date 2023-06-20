@@ -16,14 +16,14 @@ class game_controller
 
         $this->model = new game_model();
         $this->model_genre = new genre_model();
-
         $this->view = new game_view();
     }
 
     public function controller_games()
-    {         //Funcion que muestra todos los juegos 
+    {         //Funcion que muestra todos los juegos, le paso el arreglo con todos los juegos y el de todos los generos
         $games = $this->model->get_games();
-        $this->view->show_games($games);
+        $list_genre = $this->model_genre->get_genre();
+        $this->view->show_games($games, $list_genre);
     }
 
     public function controller_game($id)
