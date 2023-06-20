@@ -7,6 +7,7 @@ class game_controller
 {
 
     private $model;
+    private $model_genre;
     private $view;
 
     //Acá hay que iniciar los atributos y el contructor
@@ -14,6 +15,8 @@ class game_controller
     {
 
         $this->model = new game_model();
+        $this->model_genre = new genre_model();
+
         $this->view = new game_view();
     }
 
@@ -37,8 +40,8 @@ class game_controller
 
     public function modificar_game($id)
     {
-        $game = $this->model->get_game($id);
-        // $genre = $this->model->get_genre();
+        $game = $this->model->consultar_generos($id); // Traemos nombre y descr del juego junto a genre.name_genre
+        // $list_genre = $this->model_genre->get_genre(); // Traemos todos los generos
         $this->view->modificar_game($game);
     }
 
@@ -47,9 +50,9 @@ class game_controller
         if (isset($_POST['name_game'], $_POST['description_game'])) {
             $name_game = $_REQUEST['name_game'];
             $description_game = $_REQUEST['description_game'];
+            // $name_genre = $_REQUEST['name_genre'];
             $id_name = $id;
-            // $genre_game = $_REQUEST['name_genre'];
-            $this->model->update_game($name_game, $description_game, $id_name);
+            $this->model->update_game($name_game, $description_game,$id_name);
             $game_update=$this->model->get_game($id_name);
             $this->view->show_game($game_update);
         }

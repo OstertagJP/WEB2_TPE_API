@@ -4,6 +4,7 @@
 
 <span class="game-name">{$game->name_game}</span><br><br> 
 <span class="game-description">{$game->description_game}</span><br><br>
+{* <span class="game-description">{$name_genre}</span><br><br> *}
 
 
 {include file="templates/footer.tpl"}

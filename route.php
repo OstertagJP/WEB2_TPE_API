@@ -25,7 +25,14 @@ $login = new login_controller();
 $verify = new login_controller();
 
 
+<<<<<<< HEAD
+
+
+// lee la acción del envio del formulario
+if (!empty($_GET['action'])) {
+=======
 if (!empty($_GET['action'])) {      // lee la acción del envio del formulario
+>>>>>>> de7da2672a684a9ed0d811c4f6ee47b26e8cfa24
     $action = $_GET['action'];
 } else {
     $action = 'home';            // si no hay ninguna, setea home por defecto
