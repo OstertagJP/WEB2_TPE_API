@@ -23,14 +23,15 @@ class genre_controller{
         $this->view->show_genres_modif($genre);
     }
 
-    public function _update_genre($id){           //CONTROLADOR - MODIFICA/EDITA GÉNERO YA CARGADO
+    public function update_genre($id){           //CONTROLADOR - MODIFICA/EDITA GÉNERO YA CARGADO
         
         if (isset($_POST['name_genre'], $_POST['description_genre'])){
             $name_genre = $_POST['name_genre'];
             $description_genre = $_POST['description_genre'];
-            $id_genre = $_POST['id_genre'];
-            $this->model->update_genre($name_genre, $description_genre, $id);
-            header('Location: generos');                                        //UNA VEZ MODIFICADO EL REGISTRO, REDIRECCIONO A LA PAGINA DE GENEROS
+            $this->model->update_genre_model($name_genre, $description_genre, $id);
+            // $this->view->show_genres();
+            // header('Location: generos');
+            header("Location: ". BASE_URL . "generos");                                        //UNA VEZ MODIFICADO EL REGISTRO, REDIRECCIONO A LA PAGINA DE GENEROS
         }
     }
    

@@ -39,9 +39,9 @@ class genre_model{
 
     }
 
-    public function update_genre($name_genre, $description_genre, $id){          //Funcion que modifica un genero ya cargado segun un ID. Se le pasan nombre y descripcion
+    public function update_genre_model($name_genre, $description_genre, $id){          //Funcion que modifica un genero ya cargado segun un ID. Se le pasan nombre y descripcion
          // 2. EJECUTAR CONSULTA SQL (2 SUBPASOS: PREPARE Y EXECUTE)
-         $query = $this->db->prepare('UPDATE genre SET (name_genre = ?, description_genre = ? WHERE id = ?');
+         $query = $this->db->prepare('UPDATE genre SET name_genre = ?, description_genre = ? WHERE id_genre = ?');
          $query -> execute(array($name_genre, $description_genre, $id));
 
     }                              
