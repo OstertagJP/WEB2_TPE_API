@@ -65,11 +65,13 @@ class game_controller
             $genre_game = $_REQUEST['name_genre'];
 
             $this->model->insert_game($name_game, $description_game, $genre_game);
-            header("Location: juegos");                              //UNA VEZ QUE AGREGO EL JUEGO NUEVO, REDIRECCIONO A LA PAGINA DE JUEGOS
+            header("Location: ". BASE_URL . "juegos");     //UNA VEZ QUE AGREGO EL JUEGO NUEVO, REDIRECCIONO A LA PAGINA DE JUEGOS
         }
     }
-    // public function delete_game(){    //Funcion para eliminar un juego. Hay que ver como tomamos el valor del ID para saber cual borrar
+    public function delete_game($id){    //Funcion para eliminar un juego segun su id
+        $this->model->delete_game($id);
+        header("Location: ". BASE_URL . "juegos");
 
-    // }
+    }
 
 }
