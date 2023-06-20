@@ -23,7 +23,7 @@ class genre_controller{
         if (isset($_POST['name_genre'], $_POST['description_genre'])){
             $name_genre = $_POST['name_genre'];
             $description_genre = $_POST['description_genre'];
-             $id_genre = $_POST['id_genre'];
+            $id_genre = $_POST['id_genre'];
             $this->model->update_genre($name_genre, $description_genre, $id);
             header('Location: generos');                                        //UNA VEZ MODIFICADO EL REGISTRO, REDIRECCIONO A LA PAGINA DE GENEROS
         }

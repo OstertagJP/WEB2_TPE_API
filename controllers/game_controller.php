@@ -39,6 +39,7 @@ class game_controller
     {
         $game = $this->model->get_game($id);
         $this->view->modificar_game($game);
+        
     }
 
     public function add_game()
