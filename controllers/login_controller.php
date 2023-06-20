@@ -1,7 +1,7 @@
 <?php
-require_once 'views/login.view.php';
-require_once 'models/user.model.php';
-require_once 'helpers/auth.helper.php';
+require_once 'views/login_view.php';
+require_once 'models/user_model.php';
+require_once 'helpers/auth_helper.php';
 
 class login_controller {
 
@@ -19,7 +19,7 @@ class login_controller {
         $this->view->show_login_view();
     }
 
-    public function verifyUser() {
+    public function verify_user() {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
@@ -29,7 +29,7 @@ class login_controller {
         if (!empty($user) && password_verify($password, $user->password)) {
             $this->auth_helper->login($user);
 
-            header('Location: home');
+            header('Location: home');               // lo redirijo a home pero ya logueado
         } else {
             $this->view->show_login_view("Login incorrecto");
         }

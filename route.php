@@ -1,6 +1,7 @@
 <?php
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
+define('LOGIN', BASE_URL . 'login');
 
 require_once "controllers/game_controller.php";
 require_once "controllers/genre_controller.php";
