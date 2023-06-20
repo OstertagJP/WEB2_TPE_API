@@ -23,6 +23,7 @@ $home = new home_view();
 $game = new game_controller();
 $bygenero = new game_controller();
 $login = new login_controller();
+$verify = new login_controller();
 
 
 if (!empty($_GET['action'])) {      // lee la acción del envio del formulario
@@ -36,6 +37,10 @@ $parametros = explode('/', $action);
 switch ($parametros[0]) {
     case 'login':
         $login->show_login();
+        break;
+    
+    case 'verify':
+        $verify->verify_user();
         break;
 
     case 'home':
