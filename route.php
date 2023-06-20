@@ -18,6 +18,7 @@ require_once "views/login_view.php";
 
 $games = new game_controller();
 $genres = new genre_controller();
+$genre = new genre_controller();
 $home = new home_view();
 $game = new game_controller();
 $bygenero = new game_controller();

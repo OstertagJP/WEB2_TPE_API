@@ -17,6 +17,14 @@ class genre_model{
         return $genres;
     }
 
+    public function get_genre_modif($id){                                                  //Funcion que obtiene todos los generos
+        // 2. EJECUTAR CONSULTA SQL (2 SUBPASOS: PREPARE Y EXECUTE)
+        $query = $this->db->prepare('SELECT * FROM genre WHERE id_genre=?');
+        $query->execute(array($id));
+        $genre=$query->fetch(PDO::FETCH_OBJ);
+        return $genre;
+    }
+
     public function insert_genre($name_genre, $description_genre){                //Funcion que inserta un genero nuevo (se le pasan dos parametros, name y description)
         // 2. EJECUTAR CONSULTA SQL (2 SUBPASOS: PREPARE Y EXECUTE)
         $query = $this->db->prepare('INSERT INTO genre (name_genre, description_genre) VALUES (?,?)');
