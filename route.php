@@ -23,7 +23,7 @@ $home = new home_view();
 $game = new game_controller();
 $bygenero = new game_controller();
 $login = new login_controller();
-$verify = new login_controller();
+//$verify = new login_controller();
 
 
 if (!empty($_GET['action'])) {      // lee la acción del envio del formulario
@@ -38,9 +38,17 @@ switch ($parametros[0]) {
     case 'login':
         $login->show_login();
         break;
+<<<<<<< HEAD
 
+=======
+    
+    case 'logout':
+        $login->logout();
+        break;
+        
+>>>>>>> a5799303b898cb0da462408365136b0e2eccb66a
     case 'verify':
-        $verify->verify_user();
+        $login->verify_user();
         break;
 
     case 'home':
@@ -72,6 +80,11 @@ switch ($parametros[0]) {
     case 'modificar_game':
         $id = $parametros[1];
         $game->modificar_game($id);      //modifica un juego ya cargado
+        break;
+
+    case 'eliminar_game':
+        $id = $parametros[1];
+        $game->delete_game($id);      //elimina un juego ya cargado
         break;
 
     case 'modificar':
