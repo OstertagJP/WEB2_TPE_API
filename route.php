@@ -38,15 +38,11 @@ switch ($parametros[0]) {
     case 'login':
         $login->show_login();
         break;
-<<<<<<< HEAD
-
-=======
     
     case 'logout':
         $login->logout();
         break;
         
->>>>>>> a5799303b898cb0da462408365136b0e2eccb66a
     case 'verify':
         $login->verify_user();
         break;
