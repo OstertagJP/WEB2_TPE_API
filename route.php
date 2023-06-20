@@ -72,6 +72,11 @@ switch ($parametros[0]) {
         $genre->controller_update_genre($id);      //modifica un genero ya cargado
         break;
 
+    case 'actualizar_game':
+        $id = $parametros[1];
+        $game->actualizar_game($id);      //actualizar un juego con datos del formulario
+        break;
+
     case 'detalle':
                                                    //mostrar la pagina para registrarse
         break;

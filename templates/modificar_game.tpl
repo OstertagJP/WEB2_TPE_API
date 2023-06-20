@@ -15,14 +15,15 @@
         <a href="{BASE_URL}actualizar_game/"><input type="submit" value="Actualizar"></a>
     </form> *}
 
-<form class="update-form">
+
+<form class="update-form" action="{BASE_URL}actualizar_game/{$game->id_game}" method="POST">
     <label for="name_game">Name Game:</label>
     <input type="text" id="name_game" name="name_game" value="{$game->name_game}" required>
     <br>
 
     <label for="description_game">Description Game:</label>
     <textarea id="description_game" name="description_game" required>{$game->description_game}</textarea>
-    <br>
+    {* <br>
 
     <label for="description_game">Description Game:</label>
     <textarea id="description_game" name="description_game" required>{$game->description_game}</textarea>

@@ -30,7 +30,7 @@ class game_controller
     }
 
     public function controller_game_bygenre($id)
-    {         //Funcion que muestra detalle de un juego segun el genero solicitado
+    {         //Funcion que muestra detalle de todos los juegos segun el genero solicitado
         $game_id = $this->model->get_game_id($id);
         $this->view->show_game_id($game_id);
     }
@@ -38,16 +38,28 @@ class game_controller
     public function modificar_game($id)
     {
         $game = $this->model->get_game($id);
+        // $genre = $this->model->get_genre();
         $this->view->modificar_game($game);
-        
     }
 
-    public function add_game()
-    {           //Funcion para agregar un juego nuevo. Lee los valores que ingreso el usuario en el formulario
-        if (isset($_POST['name_game'], $_POST['description_game'], $_POST['genre_game'])) {
+    public function actualizar_game($id)
+    {
+        if (isset($_POST['name_game'], $_POST['description_game'])) {
             $name_game = $_REQUEST['name_game'];
             $description_game = $_REQUEST['description_game'];
-            $genre_game = $_REQUEST['genre_game'];
+            $id_name = $id;
+            // $genre_game = $_REQUEST['name_genre'];
+            $this->model->update_game($name_game, $description_game, $id_name);
+            $game_update=$this->model->get_game($id_name);
+            $this->view->show_game($game_update);
+        }
+    }
+    public function add_game()
+    {           //Funcion para agregar un juego nuevo. Lee los valores que ingreso el usuario en el formulario
+        if (isset($_POST['name_game'], $_POST['description_game'], $_POST['name_genre'])) {
+            $name_game = $_REQUEST['name_game'];
+            $description_game = $_REQUEST['description_game'];
+            $genre_game = $_REQUEST['name_genre'];
 
             $this->model->insert_game($name_game, $description_game, $genre_game);
             header("Location: juegos");                              //UNA VEZ QUE AGREGO EL JUEGO NUEVO, REDIRECCIONO A LA PAGINA DE JUEGOS
