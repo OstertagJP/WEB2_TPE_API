@@ -22,7 +22,7 @@ $bygenero = new game_controller();
 
 
 
-
+print_r('actualizar_game/$game->id_game');
 
 // lee la acción del envio del formulario
 if (!empty($_GET['action'])) {
@@ -68,6 +68,11 @@ switch ($parametros[0]) {
     case 'modificar':
         $id = $parametros[1];
         $genre->controller_update_genre($id);      //modifica un genero ya cargado
+        break;
+
+    case 'actualizar_game':
+        $id = $parametros[1];
+        $game->actualizar_game($id);      //actualizar un juego con datos del formulario
         break;
 
     case 'detalle':
