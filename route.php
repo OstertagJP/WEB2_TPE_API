@@ -1,10 +1,12 @@
 <?php
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
+define('LOGIN', BASE_URL . 'login');
 
 require_once "controllers/game_controller.php";
 require_once "controllers/genre_controller.php";
 require_once "controllers/home_controller.php";
+require_once "controllers/login_controller.php";
 
 require_once "models/genre_model.php";
 require_once "models/game_model.php";
@@ -12,27 +14,36 @@ require_once "models/game_model.php";
 require_once "views/game_view.php";
 require_once "views/genre_view.php";
 require_once "views/home_view.php";
-
+require_once "views/login_view.php";
 
 $games = new game_controller();
 $genres = new genre_controller();
 $home = new home_view();
 $game = new game_controller();
 $bygenero = new game_controller();
+$login = new login_controller();
 
 
+<<<<<<< HEAD
 
 
 // lee la acción del envio del formulario
 if (!empty($_GET['action'])) {
+=======
+if (!empty($_GET['action'])) {      // lee la acción del envio del formulario
+>>>>>>> de7da2672a684a9ed0d811c4f6ee47b26e8cfa24
     $action = $_GET['action'];
 } else {
-    $action = 'home'; // acción por defecto
+    $action = 'home';            // si no hay ninguna, setea home por defecto
 }
 
 $parametros = explode('/', $action);
 
 switch ($parametros[0]) {
+    case 'login':
+        $login->show_login();
+        break;
+
     case 'home':
         $home->mostrar_home();             //muestra el HOME    
         break;
@@ -75,6 +86,11 @@ switch ($parametros[0]) {
         break;
 
     case 'detalle':
-        //mostrar la pagina para registrarse
+                                                   //mostrar la pagina para registrarse
         break;
+    
+    default:
+        echo "<h1>Error 404 - Page not found </h1>";    //MOSTRAR ALGO MAS PROLIJO
+        break;
+
 }
