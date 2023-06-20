@@ -96,12 +96,16 @@ switch ($parametros[0]) {
         $game->actualizar_game($id);      //actualizar un juego con datos del formulario
         break;
 
-    case 'detalle':
-                                                   //mostrar la pagina para registrarse
+    case 'actualizar_genre':
+        $id = $parametros[1];
+        $genre->update_genre($id);      //actualizar un juego con datos del formulario
         break;
-    
+
+    case 'detalle':
+        //mostrar la pagina para registrarse
+        break;
+
     default:
         echo "<h1>Error 404 - Page not found </h1>";    //MOSTRAR ALGO MAS PROLIJO
         break;
-
 }
