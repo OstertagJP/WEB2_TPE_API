@@ -11,7 +11,7 @@ class game_model{
 
     public function get_games(){
         // 2. EJECUTAR CONSULTA SQL (2 SUBPASOS: PREPARE Y EXECUTE)        //Funcion que obtiene todos los juegos
-        $query = $this->db->prepare('SELECT game.id_game, game.name_game, game.description_game, game.genre_id FROM game join genre on game.genre_id=genre.id_genre');
+        $query = $this->db->prepare('SELECT game.id_game, game.name_game, game.description_game, game.genre_id, genre.name_genre FROM game join genre on game.genre_id=genre.id_genre');
         $query->execute();
         $games=$query->fetchAll(PDO::FETCH_OBJ);
         return $games;
