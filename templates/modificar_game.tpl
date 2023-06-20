@@ -24,6 +24,10 @@
     <textarea id="description_game" name="description_game" required>{$game->description_game}</textarea>
     <br>
 
+    <label for="description_game">Description Game:</label>
+    <textarea id="description_game" name="description_game" required>{$game->description_game}</textarea>
+    <br>
+
     <a href="{BASE_URL}actualizar_game/{$game->id_game}"><input type="submit" value="Actualizar"></a>
 </form>
 
