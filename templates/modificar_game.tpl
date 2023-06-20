@@ -23,22 +23,19 @@
 
     <label for="description_game">Description Game:</label>
     <textarea id="description_game" name="description_game" required>{$game->description_game}</textarea>
-    {* <br>
-
-    <label for="name_genre">Genre:</label>
     <br>
-    <select name="name_genre">
-    {foreach from=$game item=$genre}
-        <option value="name_genre">{$genre->name_game}</option>
-        <option value="name_genre">{$genre->name_game}</option>
-        <option value="name_genre">{$genre->name_game}</option>
-        <option value="name_genre">{$genre->name_game}</option>
+
+    {* <label>GENERO:{$game->name_genre}</label> *}
+    <br>
+    <br>
+    {* <select name="name_genre">
+        <option>-- Seleccione --</option>
+        {foreach from=$list_genre item=$genres}
+            <option value="{$genres->name_genre}">{$genres->name_genre}</option>
+        {/foreach}
     </select> *}
 
     <input type="submit" value="Actualizar">
-
-    {* <a href="{BASE_URL}actualizar_game/{$game->id_game}">Actualizar</a> *}
-    {* <a href="{BASE_URL}juego/{$game->id_game}">Detalle</a> *}
 </form>
 
 

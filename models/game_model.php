@@ -29,6 +29,17 @@ class game_model
         return $game;
     }
 
+    public function consultar_generos($id)
+    {
+        // 2. EJECUTAR CONSULTA SQL (2 SUBPASOS: PREPARE Y EXECUTE) // Funcion q obtiene un juego especifico con su Genero
+        $query = $this->db->prepare('SELECT game.id_game, game.name_game, game.description_game, genre.name_genre FROM game join genre on game.genre_id=genre.id_genre WHERE game.id_game=?');
+        $query->execute(array($id));
+        $modified_game = $query->fetch(PDO::FETCH_OBJ);
+        return $modified_game;
+    }
+
+    
+
     public function insert_game($name_game, $description_game, $genre_game)
     {                //Funcion que inserta un juego nuevo (se le pasan tres parametros, name, description y genre)
         // 2. EJECUTAR CONSULTA SQL (2 SUBPASOS: PREPARE Y EXECUTE)
@@ -56,7 +67,7 @@ class game_model
     {
         //Funcion que modifica un juego ya cargado. Se le pasan los cuatro parametros.
         $query = $this->db->prepare('UPDATE game SET name_game = ?, description_game = ? WHERE id_game = ?');
-        $query->execute(array($name_game, $description_game, $id));
+        $query->execute(array($name_game, $description_game,$id));
         $games = $query->fetchAll(PDO::FETCH_OBJ);
         return $games;
     }

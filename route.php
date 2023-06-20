@@ -22,7 +22,6 @@ $bygenero = new game_controller();
 
 
 
-print_r('actualizar_game/$game->id_game');
 
 // lee la acción del envio del formulario
 if (!empty($_GET['action'])) {
