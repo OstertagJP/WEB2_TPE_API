@@ -89,7 +89,12 @@ switch ($parametros[0]) {
         break;
 
     case 'add_game':
-        $games->add_game();            //ingresa un juego nuevo
+        $games->add_game();
+        break;
+
+    case 'add_genre':
+        $genre->add_genre();
+        break;
 
     case 'actualizar_game':
         $id = $parametros[1];
