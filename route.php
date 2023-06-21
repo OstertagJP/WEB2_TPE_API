@@ -90,6 +90,11 @@ switch ($parametros[0]) {
 
     case 'add_game':
         $games->add_game();
+        break;
+
+    case 'add_genre':
+        $genre->add_genre();
+        break;
 
     case 'actualizar_game':
         $id = $parametros[1];

@@ -17,5 +17,5 @@
     </tr>
 </table>
 
-
+{include file="templates/add_genre.tpl"}
 {include file="templates/footer.tpl"}

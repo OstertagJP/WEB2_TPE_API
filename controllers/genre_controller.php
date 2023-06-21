@@ -42,11 +42,12 @@ class genre_controller{
             $description_genre=$_REQUEST['description_genre'];
                     
             $this->model->insert_genre($name_genre, $description_genre);
-            header("Location: generos");                              //UNA VEZ QUE AGREGO EL GENERO NUEVO, REDIRECCIONO A LA PAGINA DE GENEROS
+            header("Location: ". BASE_URL . "generos");                              //UNA VEZ QUE AGREGO EL GENERO NUEVO, REDIRECCIONO A LA PAGINA DE GENEROS
         } 
     }
 
     public function delete_genre($id){   //Funcion para eliminar un juego segun su id
+
         $this->model->delete_genre($id);
         header("Location: ". BASE_URL . "generos");
     }
