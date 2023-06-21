@@ -23,8 +23,6 @@ $home = new home_view();
 $game = new game_controller();
 $bygenero = new game_controller();
 $login = new login_controller();
-//$verify = new login_controller();
-
 
 if (!empty($_GET['action'])) {      // lee la acción del envio del formulario
     $action = $_GET['action'];
