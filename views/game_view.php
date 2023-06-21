@@ -34,9 +34,10 @@ class game_view {
         $this->smarty->display('templates/game_details_id.tpl');
     }
 
-    public function modificar_game($game){
+    public function modificar_game($game, $list_genre){
         // asigno variables al tpl smarty
         $this->smarty->assign('game', $game);
+        $this->smarty->assign('list_genre', $list_genre);
         $this->smarty->assign('BASE_URL', BASE_URL);
         // muestro el tpl
         $this->smarty->display('templates/modificar_game.tpl');

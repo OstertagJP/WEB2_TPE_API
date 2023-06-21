@@ -10,7 +10,7 @@
                 <td>{$genre ->name_genre} </td>
                 <td>{$genre ->description_genre}</td>
                 <td><a href="{BASE_URL}modificar/{$genre ->id_genre}">EDITAR</a></td>
-                <td><a href="{BASE_URL}borrar/{$genre ->id_genre}">BORRAR</a></td>
+                <td><a href="{BASE_URL}borrar_genre/{$genre ->id_genre}">BORRAR</a></td>
                 <td><a href="{BASE_URL}bygenero/{$genre ->id_genre}">Juegos de este genero</a></td>
             </tr>
         {/foreach}

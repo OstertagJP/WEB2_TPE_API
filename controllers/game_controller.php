@@ -2,6 +2,7 @@
 
 require_once 'models/game_model.php';
 require_once 'views/game_view.php';
+require_once 'models/genre_model.php';
 
 class game_controller
 {
@@ -41,8 +42,8 @@ class game_controller
     public function modificar_game($id)
     {
         $game = $this->model->consultar_generos($id); // Traemos nombre y descr del juego junto a genre.name_genre
-        // $list_genre = $this->model_genre->get_genre(); // Traemos todos los generos
-        $this->view->modificar_game($game);
+        $list_genre = $this->model_genre->get_genre(); // Traemos todos los generos
+        $this->view->modificar_game($game, $list_genre);
     }
 
     public function actualizar_game($id)

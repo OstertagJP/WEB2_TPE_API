@@ -46,7 +46,9 @@ class genre_controller{
         } 
     }
 
-    public function delete_genre($id){
-        
+    public function delete_genre($id){   //Funcion para eliminar un juego segun su id
+        $this->model->delete_genre($id);
+        header("Location: ". BASE_URL . "generos");
     }
+    
 }

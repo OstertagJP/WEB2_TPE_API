@@ -38,11 +38,11 @@ switch ($parametros[0]) {
     case 'login':
         $login->show_login();
         break;
-    
+
     case 'logout':
         $login->logout();
         break;
-        
+
     case 'verify':
         $login->verify_user();
         break;
@@ -87,7 +87,7 @@ switch ($parametros[0]) {
         $id = $parametros[1];
         $genre->controller_update_genre($id);      //modifica un genero ya cargado
         break;
-    
+
     case 'add_game':
         $games->add_game();
 
@@ -99,6 +99,11 @@ switch ($parametros[0]) {
     case 'actualizar_genre':
         $id = $parametros[1];
         $genre->update_genre($id);      //actualizar un juego con datos del formulario
+        break;
+
+    case 'borrar_genre':
+        $id = $parametros[1];
+        $genre->delete_genre($id);      //actualizar un juego con datos del formulario
         break;
 
     case 'detalle':
