@@ -1,3 +1,5 @@
+{include file="templates/head.tpl"}
+{include file="templates/header.tpl"}
 
 <div class="container">
     <form action="{BASE_URL}verify" method="POST" class="update-form">
