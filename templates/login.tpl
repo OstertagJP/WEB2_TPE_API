@@ -2,7 +2,7 @@
 {include file="templates/header.tpl"}
 
 <div class="container">
-    <form action="verify" method="POST" class="col-md-4 offset-md-4 mt-4">
+    <form action="{BASE_URL}verify" method="POST" class="update-form">
         <h1>{$titulo}</h1>
 
         <div class="form-group">
@@ -26,4 +26,4 @@
 
 </div>
 
-{include 'templates/footer.tpl'}
+{include file="templates/footer.tpl"}
