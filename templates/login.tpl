@@ -1,5 +1,3 @@
-{include file="templates/head.tpl"}
-{include file="templates/header.tpl"}
 
 <div class="container">
     <form action="verify" method="POST" class="col-md-4 offset-md-4 mt-4">
@@ -25,5 +23,3 @@
     </form>
 
 </div>
-
-{include 'templates/footer.tpl'}

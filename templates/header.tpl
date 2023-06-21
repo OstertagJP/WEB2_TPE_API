@@ -4,6 +4,7 @@
         <div>
             <h1>E-Sports</h1>
             <p>Jugando con profesionalidad...</p>
+            {include file="templates/login.tpl"}
             {include file="templates/nav.tpl"}
         </div>
 
