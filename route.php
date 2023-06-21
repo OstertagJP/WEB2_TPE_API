@@ -89,12 +89,16 @@ switch ($parametros[0]) {
         break;
 
     case 'add_game':
+<<<<<<< HEAD
         $games->add_game();
         break;
 
     case 'add_genre':
         $genre->add_genre();
         break;
+=======
+        $games->add_game();            //ingresa un juego nuevo
+>>>>>>> 02b4ffdcbf88ce164c28be467f85784f60161643
 
     case 'actualizar_game':
         $id = $parametros[1];
@@ -103,12 +107,12 @@ switch ($parametros[0]) {
 
     case 'actualizar_genre':
         $id = $parametros[1];
-        $genre->update_genre($id);      //actualizar un juego con datos del formulario
+        $genre->update_genre($id);      //actualizar genero con datos del formulario
         break;
 
     case 'borrar_genre':
         $id = $parametros[1];
-        $genre->delete_genre($id);      //actualizar un juego con datos del formulario
+        $genre->delete_genre($id);      //borra un genero cargado
         break;
 
     case 'detalle':

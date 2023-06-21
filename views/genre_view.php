@@ -16,13 +16,22 @@ class genre_view{
         $this->smarty->assign('BASE_URL', BASE_URL);
         // muestro el tpl
         $this->smarty->display('templates/genre_list.tpl');
-}
+    }
+    
     public function show_genres_modif($genre){
         // asigno variables al tpl smarty
         $this->smarty->assign('genre', $genre);
         $this->smarty->assign('BASE_URL', BASE_URL);
         // muestro el tpl
         $this->smarty->display('templates/modificar_genre.tpl');
-    }    
+    } 
+    
+    public function mostrar_confirmacion($id){
+        // asigno variables al tpl smarty
+        $this->smarty->assign('id', $id);
+        $this->smarty->assign('BASE_URL', BASE_URL);
+        // muestro el tpl
+        $this->smarty->display('templates/confirmacion.tpl');
+    }
 }
 
