@@ -40,11 +40,11 @@ class game_model
 
     
 
-    public function insert_game($name_game, $description_game, $genre_game)
+    public function insert_game($name_game, $description_game, $id_genre_game)
     {                //Funcion que inserta un juego nuevo (se le pasan tres parametros, name, description y genre)
         // 2. EJECUTAR CONSULTA SQL (2 SUBPASOS: PREPARE Y EXECUTE)
         $query = $this->db->prepare('INSERT INTO game (name_game, description_game, genre_id) VALUES (?,?,?)');
-        $query->execute(array($name_game, $description_game, $genre_game));
+        $query->execute(array($name_game, $description_game, $id_genre_game));
     }
 
     public function delete_game($id_game)

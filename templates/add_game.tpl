@@ -5,7 +5,7 @@
         <h2>Agregar juego nuevo</h2>
 
         <label>Nombre:</label>
-        <input type="text" id="name_game" name="name_game" value="" required>
+        <input type="text" id="name_game" name="name_game" required>
         <br>
 
         <label>Descripcion:</label>
@@ -13,12 +13,12 @@
         <br>
 
         <label>Genero:</label>
-        <select name="genre_game" required>
-            <option> Seleccione un genero </option>
-            {foreach $list_genre item=$genre_lista}
-                <option value="{$genre_lista->name_genre}">{$genre_lista->name_genre}</option>
-            {/foreach}
-        </select>
+            <select name="name_genre" required>
+                <option>-- Seleccione --</option>
+                {foreach from=$list_genre item=$genres}
+                    <option value="{$genres->id_genre}">{$genres->name_genre}</option>
+                {/foreach}
+            </select>
         <br>
         <br>
 

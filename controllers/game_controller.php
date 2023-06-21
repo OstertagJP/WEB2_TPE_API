@@ -61,10 +61,9 @@ class game_controller
     public function add_game()
     {           //Funcion para agregar un juego nuevo. Lee los valores que ingreso el usuario en el formulario
         if (isset($_POST['name_game'], $_POST['description_game'], $_POST['name_genre'])) {
-            $name_game = $_REQUEST['name_game'];
-            $description_game = $_REQUEST['description_game'];
-            $genre_game = $_REQUEST['name_genre'];
-
+            $name_game = $_POST['name_game'];
+            $description_game = $_POST['description_game'];
+            $genre_game = $_POST['name_genre'];
             $this->model->insert_game($name_game, $description_game, $genre_game);
             header("Location: ". BASE_URL . "juegos");     //UNA VEZ QUE AGREGO EL JUEGO NUEVO, REDIRECCIONO A LA PAGINA DE JUEGOS
         }
