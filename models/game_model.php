@@ -63,12 +63,10 @@ class game_model
         return $games;
     }
 
-    public function update_game($name_game, $description_game,$id)
+    public function update_game($id, $name_game, $description_game,$id_genre)
     {
         //Funcion que modifica un juego ya cargado. Se le pasan los cuatro parametros.
-        $query = $this->db->prepare('UPDATE game SET name_game = ?, description_game = ? WHERE id_game = ?');
-        $query->execute(array($name_game, $description_game,$id));
-        $games = $query->fetchAll(PDO::FETCH_OBJ);
-        return $games;
+        $query = $this->db->prepare('UPDATE game SET name_game = ?, description_game = ?, genre_id = ? WHERE id_game = ?');
+        $query->execute(array($name_game, $description_game,$id_genre, $id));
     }
 }
