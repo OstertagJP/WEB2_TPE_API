@@ -16,7 +16,7 @@
     <select name="name_genre">
         <option>-- Seleccione --</option>
         {foreach from=$list_genre item=$genres}
-            <option value="{$genres->name_genre}">{$genres->name_genre}</option>
+            <option value="{$genres->id_genre}">{$genres->name_genre}</option>
         {/foreach}
     </select>
 

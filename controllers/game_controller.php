@@ -48,14 +48,13 @@ class game_controller
 
     public function actualizar_game($id)
     {
-        if (isset($_POST['name_game'], $_POST['description_game'])) {
+        if (isset($_POST['name_game'], $_POST['description_game'], $_POST['name_genre'])) {
             $name_game = $_REQUEST['name_game'];
             $description_game = $_REQUEST['description_game'];
-            // $name_genre = $_REQUEST['name_genre'];
-            $id_name = $id;
-            $this->model->update_game($name_game, $description_game,$id_name);
-            $game_update=$this->model->get_game($id_name);
-            $this->view->show_game($game_update);
+            $id_genre = $_REQUEST['name_genre'];
+            
+            $this->model->update_game($id, $name_game, $description_game,$id_genre);
+            header("Location: ". BASE_URL . "juegos");
         }
     }
     public function add_game()
