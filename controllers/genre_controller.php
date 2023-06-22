@@ -29,7 +29,7 @@ class genre_controller
     public function controller_update_genre($id)
     {
         $this->helper->checkLoggedIn();
-        session_start();
+        // session_start();
         $is_logged = isset($_SESSION['IS_LOGGED']) && $_SESSION['IS_LOGGED'];
         $genre = $this->model->get_genre_modif($id);
         $this->view->show_genres_modif($genre, $is_logged);
