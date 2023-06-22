@@ -20,7 +20,7 @@ $game = new game_controller();
 $games = new game_controller();
 $genres = new genre_controller();
 $genre = new genre_controller();
-$home = new home_view();
+$home = new home_controller();
 $bygenero = new game_controller();
 $login = new login_controller();
 
@@ -46,7 +46,7 @@ switch ($parametros[0]) {
         break;
 
     case 'home':
-        $home->mostrar_home();             //muestra el HOME    
+        $home->mostrar_inicio();             //muestra el HOME    
         break;
 
     case 'generos':

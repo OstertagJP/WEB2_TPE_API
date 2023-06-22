@@ -4,7 +4,7 @@
         <li class="barramenu"><a href="{$BASE_URL}juegos">Juegos</a></li>
         <li class="barramenu"><a href="{$BASE_URL}generos">Generos</a></li>
         
-        {if (isset($_SESSION['IS_LOGGED'])) && !($_SESSION['IS_LOGGED'])}
+        {if !$is_logged}
             <li class="barramenu"><a href="{$BASE_URL}login">LOGIN</a></li>
         {else}
             <li class="barramenu"><a href="{$BASE_URL}logout">LOGOUT</a></li>
