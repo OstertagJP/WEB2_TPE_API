@@ -16,11 +16,11 @@ require_once "views/genre_view.php";
 require_once "views/home_view.php";
 require_once "views/login_view.php";
 
+$game = new game_controller();
 $games = new game_controller();
 $genres = new genre_controller();
 $genre = new genre_controller();
-$home = new home_view();
-$game = new game_controller();
+$home = new home_controller();
 $bygenero = new game_controller();
 $login = new login_controller();
 
@@ -46,7 +46,7 @@ switch ($parametros[0]) {
         break;
 
     case 'home':
-        $home->mostrar_home();             //muestra el HOME    
+        $home->mostrar_inicio();             //muestra el HOME    
         break;
 
     case 'generos':
@@ -86,11 +86,11 @@ switch ($parametros[0]) {
         $genre->controller_update_genre($id);      //modifica un genero ya cargado
         break;
 
-    case 'add_game':
+    case 'add_game':                       //agrega un juego nuevo
         $games->add_game();
         break;
 
-    case 'add_genre':
+    case 'add_genre':                 //agrega un genero nuevo
         $genre->add_genre();
         break;
 
@@ -109,9 +109,9 @@ switch ($parametros[0]) {
         $genre->delete_genre($id);      //borra un genero cargado
         break;
 
-    case 'detalle':
-        //mostrar la pagina para registrarse
-        break;
+    // case 'detalle':
+    //     mostrar la pagina para registrarse
+    //     break;
 
     default:
         echo "<h1>Error 404 - Page not found </h1>";    //MOSTRAR ALGO MAS PROLIJO

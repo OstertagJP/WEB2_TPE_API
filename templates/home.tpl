@@ -2,8 +2,6 @@
 {include file="templates/header.tpl"}
 
 
-
-
 <body>
     <div class="container_body">
         <img src="./img/estadio.jpg" alt="estadio" class="img_home">';

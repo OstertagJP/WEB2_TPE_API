@@ -16,6 +16,8 @@ class login_controller {
     }
 
     public function show_login() {
+        session_start();
+        session_destroy();    
         $this->view->show_login_view();
     }
 
@@ -41,6 +43,6 @@ class login_controller {
 
     public function logout() {
         $this->auth_helper->logout();
-        header("Location: ". BASE_URL);
+        header("Location: ". BASE_URL . "home");
     }
 }

@@ -8,6 +8,7 @@ class auth_helper {
         session_start();
         $_SESSION['ID_USER'] = $user->id;
         $_SESSION['USERNAME'] = $user->username;
+        $_SESSION['IS_LOGGED'] = true;
     }
 
     public function logout() {
