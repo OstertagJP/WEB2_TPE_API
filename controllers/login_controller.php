@@ -17,16 +17,20 @@ class login_controller {
 
     public function show_login() {
         session_start();
-        session_destroy();    
-        $this->view->show_login_view();
+        session_destroy();
+        $is_logged = isset($_SESSION['IS_LOGGED']) && $_SESSION['IS_LOGGED'];    
+        $this->view->show_login_view($is_logged);
     }
 
     public function verify_user() {
+        session_start();
+        $is_logged = isset($_SESSION['IS_LOGGED']) && $_SESSION['IS_LOGGED'];
         if (isset($_POST['username']) && isset($_POST['password'])){
             $username = $_POST['username'];
             $password = $_POST['password'];
 
             $user = $this->model->get_by_username($username);
+            
             
             // Si encontró que hay un usuario en la base de datos con ese password, entra al if y se loguea
 
@@ -36,7 +40,7 @@ class login_controller {
 
                 header("Location: ". BASE_URL);               // lo redirijo a home pero ya logueado
             } else {
-                $this->view->show_login_view("Login incorrecto");
+                $this->view->show_login_view($is_logged);
             }
         }
     }

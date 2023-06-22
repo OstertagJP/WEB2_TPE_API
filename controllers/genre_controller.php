@@ -14,13 +14,17 @@ class genre_controller{
     }
 
     public function controller_genres(){              //CONTROLADOR - LISTA TODOS LOS GÉNEROS CARGADOS
+        session_start();
+        $is_logged = isset($_SESSION['IS_LOGGED']) && $_SESSION['IS_LOGGED'];
         $genres = $this->model->get_genre();
-        $this->view->show_genres($genres);
+        $this->view->show_genres($genres, $is_logged);
     } 
 
     public function controller_update_genre($id){
+        session_start();
+        $is_logged = isset($_SESSION['IS_LOGGED']) && $_SESSION['IS_LOGGED'];
         $genre= $this->model->get_genre_modif($id);
-        $this->view->show_genres_modif($genre);
+        $this->view->show_genres_modif($genre, $is_logged);
     }
 
     public function update_genre($id){           //CONTROLADOR - MODIFICA/EDITA GÉNERO YA CARGADO

@@ -13,7 +13,6 @@ class home_controller{
     public function mostrar_inicio(){
    
         session_start();
-
         $is_logged = isset($_SESSION['IS_LOGGED']) && $_SESSION['IS_LOGGED'];
 
         $this->view->mostrar_home($is_logged);

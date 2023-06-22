@@ -22,28 +22,36 @@ class game_controller
 
     public function controller_games()
     {         //Funcion que muestra todos los juegos, le paso el arreglo con todos los juegos y el de todos los generos
+        session_start();
+        $is_logged = isset($_SESSION['IS_LOGGED']) && $_SESSION['IS_LOGGED'];
         $games = $this->model->get_games();
         $list_genre = $this->model_genre->get_genre();
-        $this->view->show_games($games, $list_genre);
+        $this->view->show_games($games, $list_genre, $is_logged);
     }
 
     public function controller_game($id)
     {         //Funcion que muestra detalle de un juego
+        session_start();
+        $is_logged = isset($_SESSION['IS_LOGGED']) && $_SESSION['IS_LOGGED'];
         $game = $this->model->get_game($id);
-        $this->view->show_game($game);
+        $this->view->show_game($game, $is_logged);
     }
 
     public function controller_game_bygenre($id)
     {         //Funcion que muestra detalle de todos los juegos segun el genero solicitado
+        session_start();
+        $is_logged = isset($_SESSION['IS_LOGGED']) && $_SESSION['IS_LOGGED'];
         $game_id = $this->model->get_game_id($id);
-        $this->view->show_game_id($game_id);
+        $this->view->show_game_id($game_id, $is_logged);
     }
 
     public function modificar_game($id)
     {
+        session_start();
+        $is_logged = isset($_SESSION['IS_LOGGED']) && $_SESSION['IS_LOGGED'];
         $game = $this->model->consultar_generos($id); // Traemos nombre y descr del juego junto a genre.name_genre
         $list_genre = $this->model_genre->get_genre(); // Traemos todos los generos
-        $this->view->modificar_game($game, $list_genre);
+        $this->view->modificar_game($game, $list_genre, $is_logged);
     }
 
     public function actualizar_game($id)

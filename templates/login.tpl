@@ -15,11 +15,11 @@
             <input type="password" name="password" class="form-control" placeholder="Password">
         </div>
 
-        {if $error}
+        {* {if $error}
         <div class="alert alert-danger" role="alert">               
             {$error}
         </div>
-        {/if}
+        {/if} *}
 
         <button type="submit" class="btn btn-primary">Ingresar</button>
     </form>
