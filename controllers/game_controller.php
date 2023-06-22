@@ -51,7 +51,7 @@ class game_controller
     public function modificar_game($id)
     {
         $this->helper->checkLoggedIn();
-        session_start();
+        // session_start();
         $is_logged = isset($_SESSION['IS_LOGGED']) && $_SESSION['IS_LOGGED'];
         $game = $this->model->consultar_generos($id); // Traemos nombre y descr del juego junto a genre.name_genre
         $list_genre = $this->model_genre->get_genre(); // Traemos todos los generos
