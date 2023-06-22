@@ -3,19 +3,22 @@
 
 <table>
     <tr class="table_genre">
-            <th>Genero:</th>
-            <th>Descripcion:</th>
+        <th>Genero:</th>
+        <th>Descripcion:</th>
         {foreach from=$genres item=$genre}
-            <tr>
-                <td>{$genre ->name_genre} </td>
-                <td>{$genre ->description_genre}</td>
+        <tr>
+            <td>{$genre ->name_genre} </td>
+            <td>{$genre ->description_genre}</td>
+            {if $is_logged}
                 <td><a href="{BASE_URL}modificar/{$genre ->id_genre}">EDITAR</a></td>
                 <td><a href="{BASE_URL}borrar_genre/{$genre ->id_genre}">BORRAR</a></td>
-                <td><a href="{BASE_URL}bygenero/{$genre ->id_genre}">Juegos de este genero</a></td>
-            </tr>
-        {/foreach}
+            {/if}
+            <td><a href="{BASE_URL}bygenero/{$genre ->id_genre}">Juegos de este genero</a></td>
+        </tr>
+    {/foreach}
     </tr>
 </table>
-
-{include file="templates/add_genre.tpl"}
+{if $is_logged}
+    {include file="templates/add_genre.tpl"}
+{/if}
 {include file="templates/footer.tpl"}

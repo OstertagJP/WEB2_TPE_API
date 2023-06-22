@@ -18,7 +18,7 @@ class auth_helper {
 
     public function checkLoggedIn() {
         session_start();
-        if (!isset($_SESSION['ID_USER'])) {
+        if (!isset($is_logged)) {
             header('Location: ' . LOGIN);
             die();
         }       
